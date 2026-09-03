@@ -1,0 +1,192 @@
+/* =========================================================
+   TechIT Agent — Feedback form
+   Re-uses the existing design token system (CSS variables +
+   data-theme dark / light) defined in src/styles.css.
+   ========================================================= */
+
+.fb-card {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.fb-card h2 {
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.fb-card p fb-desc {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  margin: 0 0 22px;
+}
+
+.fb-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.fb-field label {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.fb-field input,
+.fb-field textarea,
+.fb-field select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  outline: none;
+}
+
+.fb-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.fb-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+}
+
+.fb-field input:focus,
+.fb-field textarea:focus,
+.fb-field select:focus {
+  border-color: var(--text);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.fb-field input::placeholder,
+.fb-field textarea::placeholder {
+  color: var(--text-soft);
+}
+
+/* required asterisk */
+.fb-field .fb-required::after {
+  content: ' *';
+  color: #e11d24;
+}
+
+/* ===== star rating ===== */
+.fb-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fb-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-soft);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 2px;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+
+.fb-star:hover {
+  color: #fb7185;
+  transform: scale(1.12);
+}
+
+.fb-star.filled {
+  color: #e11d24;
+}
+
+.fb-stars .fb-hint {
+  margin-left: 8px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+/* ===== submit ===== */
+.fb-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.fb-btn-submit {
+  flex: 1;
+}
+
+/* ===== status rows ===== */
+.fb-status {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fb-status-success {
+  background: var(--bg-soft);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.fb-status-success .fb-status-icon {
+  color: #15803d;
+}
+
+.fb-status-error {
+  background: var(--bg-soft);
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.fb-status-error .fb-status-icon {
+  color: #e11d24;
+}
+
+/* ===== spinner ===== */
+.fb-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: fb-spin 0.75s linear infinite;
+}
+
+@keyframes fb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== responsive ===== */
+@media (max-width: 600px) {
+  .fb-card {
+    padding: 24px;
+  }
+}
