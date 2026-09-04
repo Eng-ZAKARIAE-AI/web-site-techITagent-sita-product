@@ -408,7 +408,7 @@ function App() {
               Request a demo <IconArrow />
             </a>
             <a
-              href="https://github.com/Eng-ZAKARIAE-AI/intership_end_of_year"
+              href="https://github.com/Eng-ZAKARIAE-AI/zabbix-ai-agent"
               target="_blank"
               rel="noreferrer noopener"
               className="btn btn-ghost"
