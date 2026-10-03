@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { FeedbackForm } from './db-feedback'
 
 type IconProps = { size?: number }
@@ -581,6 +582,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </>
   )
 }
