@@ -565,7 +565,7 @@ function App() {
             <div>
               <h5>Contact</h5>
               <ul>
-                <li><a href="mailto:zakariae.Elhaddouchi@sita.aero.">Zakaria</a></li>
+                <li><a href="mailto:zakariae.Elhaddouchi@sita.aero.">Zakariae El Haddouchi</a></li>
                 <li><a href="https://github.com/Eng-ZAKARIAE-AI" target="_blank" rel="noreferrer noopener">GitHub</a></li>
                 <li><a href="/demo">Request a demo</a></li>
               </ul>
